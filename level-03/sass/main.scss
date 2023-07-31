@@ -1,0 +1,345 @@
+// Variables
+
+$primary: #5265e1;
+$secondary: #fa5959;
+$dark: #242946;
+$light: #f7f7f7;
+
+$font-family-sans-serif: "Roboto";
+$font-size-small: 0.85rem;
+
+$box-shadow: 0 0.5rem 0.5rem rgba(82, 101, 225, 0.2);
+
+$accordion-button-icon: url("../images/icon-arrow.svg");
+$accordion-button-active-icon: url("../images/icon-arrow-active.svg");
+$accordion-bg: transparent;
+$accordion-button-active-bg: transparent;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Globals ---------------------------------
+
+main {
+     margin-top: 20vh;
+}
+
+.btn {
+     font-size: $font-size-small;
+     font-weight: 500;
+     padding: 0.75rem 1rem;
+     border: 2px solid transparent;
+}
+
+.nav-link:hover,
+.nav-tabs .nav-link:hover,
+.accordion-button:hover {
+     color: $secondary !important;
+}
+
+.btn-primary {
+     --bs-btn-hover-color: #{$primary};
+     --bs-btn-border-color: transparent;
+     --bs-btn-hover-bg: transparent;
+     --bs-btn-hover-border-color: #{$primary};
+}
+
+.btn-secondary {
+     --bs-btn-color: #fff;
+     --bs-btn-border-color: transparent;
+     --bs-btn-hover-color: #{$secondary};
+     --bs-btn-hover-bg: #fff;
+     --bs-btn-hover-border-color: #{$secondary};
+}
+
+.btn-light {
+     --bs-btn-color: #000;
+     --bs-btn-bg: #{$light};
+     --bs-btn-border-color: transparent;
+     --bs-btn-hover-color: #000;
+     --bs-btn-hover-bg: #fff;
+     --bs-btn-hover-border-color: #000;
+}
+
+// Navbar ---------------------------------
+
+header .nav-link,
+header .btn {
+     font-size: $font-size-small;
+     letter-spacing: 0.2rem;
+}
+
+.navbar {
+     --bs-navbar-toggler-focus-width: 0;
+}
+
+.navbar-toggler-icon {
+     background-image: url("../images/icon-hamburger.svg");
+     width: 1.125rem;
+     height: 0.938rem;
+}
+
+.offcanvas {
+     background-color: $dark;
+     opacity: 0.9;
+
+     .btn-close {
+          background-image: url("../images/icon-close.svg");
+          opacity: 1;
+     }
+}
+
+.btn-login {
+     box-shadow: $box-shadow;
+}
+
+// Hero section ---------------------------------
+
+.hero-img {
+     width: 115%;
+}
+
+.first-pill {
+     height: 70%;
+     width: 200%;
+     top: 30%;
+     left: 30%;
+     z-index: -1;
+}
+
+.second-pill {
+     height: 70%;
+     width: 200%;
+     top: 40%;
+     right: 30%;
+     z-index: -1;
+}
+
+// Features section ---------------------------------
+
+.nav-tabs .nav-link {
+     margin-bottom: 0;
+     border: 0;
+}
+
+.nav-fill .nav-item {
+     flex-basis: 0;
+}
+
+.nav-item .nav-link {
+     margin-bottom: 0.25rem;
+}
+
+.nav-tabs .nav-link.active {
+     margin-bottom: 0;
+     border-bottom: 0.25rem solid $secondary;
+}
+
+.nav-tabs .nav-link {
+     color: var(--bs-tertiary-color);
+}
+
+// Downloads section -> card ---------------------------------
+
+.card {
+     &__logo {
+          height: 100px;
+     }
+
+     &__title {
+          font-size: 1.2rem;
+     }
+
+     &__subtitle {
+          font-size: 0.8rem;
+          color: var(--bs-tertiary-color);
+          margin-top: 0.5rem;
+     }
+
+     &__dots {
+          width: 100%;
+     }
+}
+
+%card-placeholder {
+     display: flex;
+     align-items: center;
+     gap: 1.5rem;
+     padding-top: 2.5rem;
+     padding-bottom: 1.5rem;
+     padding-inline: 0;
+     border: none;
+     border-radius: 1rem;
+     box-shadow: 0 0.5rem 0.5rem rgba(82, 101, 225, 0.2);
+     width: 280px;
+}
+
+.card:nth-child(1) {
+     @extend %card-placeholder;
+     margin-top: 0;
+}
+
+.card:nth-child(2) {
+     @extend %card-placeholder;
+     margin-top: 3rem;
+}
+
+.card:nth-child(3) {
+     @extend %card-placeholder;
+     margin-top: 6rem;
+}
+
+// FAQs section ---------------------------------
+
+.accordion-button:focus {
+     outline: none;
+     box-shadow: none;
+}
+
+.accordion-flush .accordion-item:last-child {
+     border-bottom: var(--bs-accordion-border-width) solid
+          var(--bs-accordion-border-color);
+}
+
+.accordion-button:not(.collapsed) {
+     box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+          var(--bs-accordion-border-color);
+}
+
+// Footer ----------------------------------------
+
+.footer {
+     &__subtitle {
+          font-size: $font-size-small;
+          letter-spacing: 0.2rem;
+     }
+}
+
+.form-control {
+     font-size: 0.85rem;
+     padding: 0.75rem 1rem;
+     border: 2px solid #fff;
+     transition: none;
+     background-clip: border-box;
+}
+
+.form-control::placeholder {
+     color: var(--bs-tertiary-color);
+}
+
+.was-validated .form-control:invalid:focus,
+.form-control.is-invalid:focus {
+     border-color: $secondary;
+     box-shadow: 0 0 0 2px $secondary;
+     border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+     background-image: url("../images/icon-error.svg");
+     background-size: 1.25rem 1.25rem;
+     border-color: $secondary;
+     box-shadow: 0 0 0 2px $secondary;
+     border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.was-validated .form-control:valid:focus,
+.form-control.is-valid:focus {
+     border-color: $success;
+     box-shadow: 0 0 0 2px $success;
+}
+
+.was-validated .form-control:valid,
+.form-control.is-valid {
+     background-image: url("../images/icon-success.svg");
+     background-size: 1.25rem 1.25rem;
+     border-color: $success;
+     box-shadow: 0 0 0 2px $success;
+}
+
+.invalid-feedback {
+     color: white;
+     background-color: $secondary;
+     text-align: left;
+     font-style: oblique;
+     padding: 0.2rem;
+     border-color: $secondary;
+     box-shadow: 0 0 0 2px $secondary;
+     border-radius: 0 0 0.5rem 0.5rem;
+}
+
+footer a {
+     font-size: $font-size-small;
+     letter-spacing: 0.2rem;
+     color: #fff;
+
+     &:hover {
+          color: $secondary;
+     }
+}
+
+.social-media:hover {
+     filter: invert(46%) sepia(39%) saturate(966%) hue-rotate(314deg)
+          brightness(99%) contrast(97%);
+}
+
+// Media queries ---------------------------------
+
+@media screen and (max-width: 767.98px) {
+     main {
+          margin-top: 10vh;
+     }
+
+     .hero-img {
+          width: 100%;
+     }
+
+     header .nav-link {
+          color: #fff;
+          font-size: 1rem;
+     }
+
+     .nav-item {
+          display: block;
+          width: 100%;
+          text-align: center;
+          border-top: 1px solid #ffffff33;
+
+          .btn {
+               display: block;
+               width: 100%;
+               border: 1px solid #fff;
+               background-color: transparent !important;
+               font-size: 1rem;
+          }
+     }
+
+     .btn-login {
+          box-shadow: none;
+     }
+
+     // Media Query Features section ---------------------------------
+
+     section .nav-item {
+          border-top: 1px solid #dde0e9;
+     }
+
+     .nav-tabs .nav-link.active {
+          display: inline;
+          width: fit-content;
+          margin-bottom: 0;
+     }
+
+     // Media Query Downloads section ---------------------------------
+
+     .card:nth-child(n) {
+          margin-top: 0;
+     }
+
+     // Media Query Footer
+
+     form button {
+          width: 100%;
+     }
+}
+
+// :hover styles ---------------------------------
